@@ -1,0 +1,20 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      param1:
+        description: 'Description for Param 1'
+        required: true
+        default: 'default-value'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run a step
+        run: echo "Running a step in the workflow"
